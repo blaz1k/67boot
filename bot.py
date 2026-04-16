@@ -58,7 +58,7 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("пошли упоремся")
         return
     if "LL" in text:
-        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ \n ДАЮЩИЕ ПОБЕДЫ \n ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
+        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ. ДАЮЩИЕ ПОБЕДЫ - ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
         return
 
 
