@@ -25,7 +25,16 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("52.")
         return
     if "кира" in text:
-        await update.message.reply_text("/ban")
+        await update.message.reply_text("!бан")
+        return
+    if "пацански" in text:
+        await update.message.reply_text("пульс ровный как у моей матери")
+        return
+    if "андрей" in text:
+        await update.message.reply_text("я андрей андреевич, сучка")
+        return
+    if "1488" in text:
+        await update.message.reply_text("ПАСХАЛКОООООООООООООООООООООООООООООООООООООООООООООООООООООО")
         return
     if "69" in text:
         await update.message.reply_text("ну давай оформим")
