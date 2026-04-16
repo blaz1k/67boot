@@ -17,7 +17,9 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "блазик" in text:
         await update.message.reply_text("да иди ты нахуй")
         return
-
+     if "420" in text:
+        await update.message.reply_text("пошли упоремся")
+        return
     if "42" in text:
         await update.message.reply_text("СЛАВА БОССУ 42")
         return
@@ -42,6 +44,9 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "фуг" in text:
         await update.message.reply_text("О ВЕЛИКИЙ ФУГ")
         return
+    if "сам пошел" in text:
+        await update.message.reply_text("завали ебало, ебаное уёбище, ты нахуй никто, а я - бог сучка")
+        return
     if "ливолол" in text:
         await update.message.reply_text("ливолол.")
         return
@@ -52,9 +57,6 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("да я")
         return
     if "228" in text:
-        await update.message.reply_text("пошли упоремся")
-        return
-    if "420" in text:
         await update.message.reply_text("пошли упоремся")
         return
     if "LL" in text:
