@@ -8,8 +8,6 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     text = update.message.text.lower()
-
-    # если есть "67" в любом месте текста
     if "67" in text:
         await update.message.reply_text("67 СИКС СЕВЕЕЕЕЕЕН ПОКОЙОООООООООООО")
         return
@@ -59,21 +57,15 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "228" in text:
         await update.message.reply_text("пошли упоремся")
         return
-    if "LL" in text:
-        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ. ДАЮЩИЕ ПОБЕДЫ - ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
-        return
     if "проиокод" in text:
         await update.message.reply_text("ДА ЗАЕБАл - ЖДИ")
         return
-
-
-
-    # если написано ровно "6"
     if text == "6":
         await update.message.reply_text("7")
         return
-
-    # если написано ровно "7"
+    if "text" == "LL":
+        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ. ДАЮЩИЕ ПОБЕДЫ - ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
+        return
     if text == "7":
         await update.message.reply_text("6")
         return
