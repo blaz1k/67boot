@@ -11,10 +11,10 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # если есть "67" в любом месте текста
     if "67" in text:
-        await update.message.reply_text("слава 67")
+        await update.message.reply_text("67 СИКС СЕВЕЕЕЕЕЕН ПОКОЙОООООООООООО")
         return
         
-    if "@blaz_shiz" or "блазик помоги" in text:
+    if "блазик" in text:
         await update.message.reply_text("да иди ты нахуй")
         return
 
