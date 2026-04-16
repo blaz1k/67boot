@@ -51,6 +51,15 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "даша" in text:
         await update.message.reply_text("да я")
         return
+    if "228" in text:
+        await update.message.reply_text("пошли упоремся")
+        return
+    if "420" in text:
+        await update.message.reply_text("пошли упоремся")
+        return
+    if "LL" in text:
+        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ \n ДАЮЩИЕ ПОБЕДЫ \n ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
+        return
 
 
     # если написано ровно "6"
