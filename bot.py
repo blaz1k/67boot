@@ -60,6 +60,10 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "LL" in text:
         await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ. ДАЮЩИЕ ПОБЕДЫ - ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
         return
+    if "проиокод" in text:
+        await update.message.reply_text("ДА ЗАЕБАл - ЖДИ")
+        return
+
 
 
     # если написано ровно "6"
