@@ -21,6 +21,22 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "42" in text:
         await update.message.reply_text("СЛАВА БОССУ 42")
         return
+    if "69" in text:
+        await update.message.reply_text("ну давай оформим")
+        return
+    if "фуг" in text:
+        await update.message.reply_text("О ВЕЛИКИЙ ФУГ")
+        return
+    if "ливолол" in text:
+        await update.message.reply_text("ливолол.")
+        return
+    if "лолкек" in text:
+        await update.message.reply_text("иди нахуй")
+        return
+    if "даша" in text:
+        await update.message.reply_text("да я")
+        return
+
 
     # если написано ровно "6"
     if text == "6":
