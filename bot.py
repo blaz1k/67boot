@@ -63,9 +63,6 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if text == "6":
         await update.message.reply_text("7")
         return
-    if "text" == "ll":
-        await update.message.reply_text("ТИМ МЫ НЕ ПОБЕДИМ")
-        return
     if text == "7":
         await update.message.reply_text("6")
         return
