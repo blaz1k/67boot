@@ -57,14 +57,14 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "228" in text:
         await update.message.reply_text("пошли упоремся")
         return
-    if "проиокод" in text:
-        await update.message.reply_text("ДА ЗАЕБАл - ЖДИ")
+    if "промо" in text:
+        await update.message.reply_text("ЗАВАЛИ ЕБАЛо")
         return
     if text == "6":
         await update.message.reply_text("7")
         return
     if "text" == "LL":
-        await update.message.reply_text("ТИМ - МЫ НЕ ПОБЕДИМ. ДАЮЩИЕ ПОБЕДЫ - ВЫЗЫВАЮЩИЕ ЖАЛОСТЬ")
+        await update.message.reply_text("ТИМ МЫ НЕ ПОБЕДИМ")
         return
     if text == "7":
         await update.message.reply_text("6")
