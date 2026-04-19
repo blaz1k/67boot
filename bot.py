@@ -11,7 +11,12 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "67" in text:
         await update.message.reply_text("67 СИКС СЕВЕЕЕЕЕЕН ПОКОЙОООООООООООО")
         return
-        
+    if "пинг" in text:
+        await update.message.reply_text("ПОНГ, СОСИ ИРИС ЕБАНЫЙ")
+        return
+    if "навальный" in text:
+        await update.message.reply_text("Zzzzzzzомбэ навальнi")
+        return
     if "блазик" in text:
         await update.message.reply_text("да иди ты нахуй")
         return
