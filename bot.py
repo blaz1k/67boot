@@ -57,7 +57,22 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "228" in text:
         await update.message.reply_text("пошли упоремся")
         return
-    if "промо" in text:
+    if "333" in text:
+        await update.message.reply_text("z уже люто ларплю барт")
+        return
+    if "666" in text:
+        await update.message.reply_text("да прибудет с тобой бог, грешный ты олух")
+        return
+    if "саня" in text:
+        await update.message.reply_text("саню пощадите")
+        return
+    if "рим" in text:
+        await update.message.reply_text("римский топ римский газ, кто не верит - тому в глаз")
+        return
+    if "блять" in text:
+        await update.message.reply_text("не матерись хуев ты долбаеб")
+        return
+    if "пром" in text:
         await update.message.reply_text("ЗАВАЛИ ЕБАЛо")
         return
     if text == "6":
