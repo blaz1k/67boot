@@ -2,12 +2,9 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, filters, ContextTypes
 
 TOKEN = "8619357016:AAGp4Olagb-BOuwSNJUwd5o-js2mJauG6iQ"
-ADMIN_ID = 6897181661  # <-- вставь свой ID
+ADMIN_ID = 6897181661
 
 current_chat_id = None
-
-
-# установка чата
 async def setchat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global current_chat_id
 
@@ -24,8 +21,6 @@ async def setchat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except:
         await update.message.reply_text("Ошибка ID")
 
-
-# /say команда
 async def say(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ADMIN_ID:
         return
@@ -42,8 +37,6 @@ async def say(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await context.bot.send_message(chat_id=current_chat_id, text=text)
 
-
-# пересылка всего
 async def forward_all(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ADMIN_ID:
         return
@@ -58,8 +51,6 @@ async def forward_all(update: Update, context: ContextTypes.DEFAULT_TYPE):
             message_id=update.message.message_id
         )
 
-
-# твоя логика
 async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message or not update.message.text:
         return
