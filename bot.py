@@ -17,6 +17,9 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if "навальный" in text:
         await update.message.reply_text("Zzzzzzzомбэ навальнi")
         return
+    if "ссср" in text:
+        await update.message.reply_text("в ссср все сосали мой хуй")
+        return
     if "блазик" in text:
         await update.message.reply_text("да иди ты нахуй")
         return
