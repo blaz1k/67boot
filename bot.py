@@ -1,13 +1,71 @@
 from telegram import Update
-from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, filters, ContextTypes
 
 TOKEN = "8619357016:AAGp4Olagb-BOuwSNJUwd5o-js2mJauG6iQ"
+ADMIN_ID = 6897181661  # <-- вставь свой ID
 
+current_chat_id = None
+
+
+# установка чата
+async def setchat(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    global current_chat_id
+
+    if update.effective_user.id != ADMIN_ID:
+        return
+
+    if not context.args:
+        await update.message.reply_text("Используй: /setchat CHAT_ID")
+        return
+
+    try:
+        current_chat_id = int(context.args[0])
+        await update.message.reply_text(f"Чат установлен: {current_chat_id}")
+    except:
+        await update.message.reply_text("Ошибка ID")
+
+
+# /say команда
+async def say(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        return
+
+    if current_chat_id is None:
+        await update.message.reply_text("Сначала /setchat")
+        return
+
+    text = " ".join(context.args)
+
+    if not text:
+        await update.message.reply_text("Напиши текст")
+        return
+
+    await context.bot.send_message(chat_id=current_chat_id, text=text)
+
+
+# пересылка всего
+async def forward_all(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        return
+
+    if current_chat_id is None:
+        return
+
+    if update.message:
+        await context.bot.forward_message(
+            chat_id=current_chat_id,
+            from_chat_id=update.message.chat_id,
+            message_id=update.message.message_id
+        )
+
+
+# твоя логика
 async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message or not update.message.text:
         return
 
     text = update.message.text.lower()
+
     if "67" in text:
         await update.message.reply_text("67 СИКС СЕВЕЕЕЕЕЕН ПОКОЙОООООООООООО")
         return
@@ -97,6 +155,9 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
 
+    app.add_handler(CommandHandler("setchat", setchat))
+    app.add_handler(CommandHandler("say", say))
+    app.add_handler(MessageHandler(filters.ALL, forward_all))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handler))
 
     app.run_polling()
